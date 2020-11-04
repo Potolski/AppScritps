@@ -2,6 +2,9 @@ function refreshVideos() {
   var playlists = ['PLRAakQEiXFePow5GFamXk4a7me6XIS5Nq',
                    'PLRAakQEiXFeMVPXsZozMoU6RKvV4wz3EF'];
   
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  SpreadsheetApp.setActiveSheet(spreadsheet.getSheets()[0]);
+  
   SpreadsheetApp.getActiveSpreadsheet().deleteRows(2, SpreadsheetApp.getActiveSpreadsheet().getLastRow()-1);
   
   getVideosFromPlaylist(playlists);
